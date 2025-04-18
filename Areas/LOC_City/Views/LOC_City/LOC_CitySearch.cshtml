@@ -1,0 +1,83 @@
+﻿@using WebApplication4.Areas.LOC_City.Models;
+@using System.Data;
+@model DataTable;
+
+<html>
+	<body>
+		<form method="post" asp-area="LOC_City" asp-controller="LOC_City" asp-action="LOC_CitySearchData">
+			<table class="table mt-3 border border-dark">
+				<thead>
+					<tr>
+						<th scope="col">Search City Details</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<label>CityName:</label>
+							<input type="text" id="cityName" name="cityName" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>CityCode:</label>
+							<input type="text" id="cityCode" name="cityCode" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="btn btn-primary" type="submit" value="Search" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+		<table class="table mt-3 border border-dark">
+			<thead>
+				<tr>
+					<th>CountryID</th>
+					<th>CountryName</th>
+					<th>StateID</th>
+					<th>StateName</th>
+					<th>CityID</th>
+					<th>CityName</th>
+					<th>CityCode</th>
+					<th>Created</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				@{
+					if (Model.Rows.Count > 0)
+					{
+						foreach (DataRow dr in Model.Rows)
+						{
+							<tr>
+								<td>@dr["CountryID"]</td>
+								<td>@dr["CountryName"]</td>
+								<td>@dr["StateID"]</td>
+								<td>@dr["StateName"]</td>
+								<td>@dr["CityID"]</td>
+								<td>@dr["CityName"]</td>
+								<td>@dr["Citycode"]</td>
+								<td>@Convert.ToDateTime(@dr["CreationDate"]).ToString("dd-MM-yyyy")</td>
+								<td>
+									<a asp-area="LOC_City" asp-controller="LOC_City" asp-action="LOC_CityEdit" asp-route-CityID="@dr["CityID"]" class="btn btn-primary">Edit</a>
+									<a asp-area="LOC_City" asp-controller="LOC_City" asp-action="LOC_CityDelete" asp-route-CityID="@dr["CityID"]" class="btn btn-danger">Delete</a>
+								</td>
+							</tr>
+						}
+					}
+					else
+					{
+						<tr>
+							<td colspan="5" class="text-center">
+								<p class="col-form-label">No Records Found!</p>
+							</td>
+						</tr>
+					}
+				}
+			</tbody>
+		</table>
+	</body>
+</html>

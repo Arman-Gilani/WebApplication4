@@ -1,0 +1,37 @@
+﻿@using WebApplication4.Areas.LOC_Country.Models;
+@using System.Data;
+@model LOC_CountryModel;
+
+<html>
+	<body>
+		<form method="post" asp-area="LOC_Country" asp-controller="LOC_Country" asp-action="LOC_CountryEditFormPage">
+			<table class="table mt-3 border border-dark">
+				<thead>
+					<tr>
+						<th scope="col">Update Country Details</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<label>CountryName:</label>
+							<input type="text" value="@ViewBag.CountryName" id="countryName" name="countryName" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>CountryCode:</label>
+							<input type="text" value="@ViewBag.CountryCode" id="countryCode" name="countryCode" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="hidden" name="CountryID" value="@ViewBag.CountryID" />
+							<input class="btn btn-primary" type="submit" value="Update" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,84 @@
+﻿@using WebApplication4.Areas.MST_Student.Models;
+@using System.Data;
+@model MST_StudentModel;
+
+<html>
+	<body>
+		<form method="post" asp-area="MST_Student" asp-controller="MST_Student" asp-action="MST_StudentAddFormPage">
+			<table class="table mt-3 border border-dark">
+				<thead>
+					<tr>
+						<th scope="col">Insert Student Details</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<label>StudentName:</label>
+							<input type="text" id="studentName" name="studentName" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Mobile No. Student:</label>
+							<input type="text" id="mobilenoStudent" name="mobilenoStudent" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Email:</label>
+							<input type="text" id="email" name="email" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Mobile No. Father:</label>
+							<input type="text" id="mobilenoFather" name="mobilenoFather" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Address:</label>
+							<input type="text" id="address" name="address" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Date of Birth:</label>
+							<input type="text" id="dob" name="dob" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Age:</label>
+							<input type="text" id="age" name="age" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>IsActive:</label>
+							<input type="text" id="isActive" name="isActive" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Gender:</label>
+							<input type="text" id="gender" name="gender" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Password:</label>
+							<input type="text" id="password" name="password" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="btn btn-primary" type="submit" value="Submit" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</body>
+</html>

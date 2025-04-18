@@ -1,0 +1,47 @@
+﻿@using WebApplication4.Areas.LOC_Country.Models;
+@using System.Data;
+@model DataTable;
+
+<html>
+	<body>
+		<table class="table mt-3 border border-dark">
+			<thead>
+				<tr>
+					<th scope="col">CountryID</th>
+					<th scope="col">CountryName</th>
+					<th scope="col">CountryCode</th>
+					<th scope="col">Created</th>
+					<th scope="col">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				@{
+					if (Model.Rows.Count > 0)
+					{
+						foreach (DataRow dr in Model.Rows)
+						{
+							<tr>
+								<td>@dr["CountryID"]</td>
+								<td>@dr["CountryName"]</td>
+								<td>@dr["CountryCode"]</td>
+								<td>@Convert.ToDateTime(@dr["Created"]).ToString("dd-MM-yyyy")</td>
+								<td>
+									<a asp-area="LOC_Country" asp-controller="LOC_Country" asp-action="LOC_CountryEdit" asp-route-CountryID="@dr["CountryID"]" class="btn btn-primary">Edit</a>
+									<a asp-area="LOC_Country" asp-controller="LOC_Country" asp-action="LOC_CountryDelete" asp-route-CountryID="@dr["CountryID"]" class="btn btn-danger">Delete</a>
+								</td>
+							</tr>
+						}
+					}
+					else
+					{
+						<tr>
+							<td colspan="5" class="text-center">
+								<p class="col-form-label">No Records Found!</p>
+							</td>
+						</tr>
+					}
+				}
+			</tbody>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+﻿@using WebApplication4.Areas.MST_Branch.Models;
+@using System.Data;
+@model MST_BranchModel;
+
+<html>
+	<body>
+		<form method="post" asp-area="MST_Branch" asp-controller="MST_Branch" asp-action="MST_BranchEditFormPage">
+			<table class="table mt-3 border border-dark">
+				<thead>
+					<tr>
+						<th scope="col">Update Branch Details</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<label>BranchName:</label>
+						<input type="text" value="@ViewBag.BranchName" id="branchName" name="branchName" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>BranchCode:</label>
+						<input type="text" value="@ViewBag.BranchCode" id="branchCode" name="branchCode" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="hidden" name="BranchID" value="@ViewBag.BranchID" />
+							<input class="btn btn-primary" type="submit" value="Update" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</body>
+</html>

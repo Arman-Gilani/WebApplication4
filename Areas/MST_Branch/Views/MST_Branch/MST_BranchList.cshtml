@@ -1,0 +1,65 @@
+﻿@using WebApplication4.Areas.MST_Branch.Models;
+@using System.Data;
+@model DataTable;
+
+@section Scripts
+	{
+	<script>
+		function checkDelete() {
+			if (confirm("Are you sure want to delete this branch?")) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+	</script>
+}
+
+<html>
+	<body>
+		<div>
+			<a asp-area="MST_Branch" asp-controller="MST_Branch" asp-action="MST_BranchAdd" class="btn btn-success">Add Branch</a>
+			<a asp-area="MST_Branch" asp-controller="MST_Branch" asp-action="MST_BranchSearch" class="btn btn-primary">Search Branch</a>
+		</div>
+		<table class="table mt-3 border border-dark">
+			<thead>
+				<tr>
+					<th>BranchID</th>
+					<th>BranchName</th>
+					<th>BranchCode</th>
+					<th>Created</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				@{
+					if (Model.Rows.Count > 0)
+					{
+						foreach (DataRow dr in Model.Rows)
+						{
+							<tr>
+								<td>@dr["BranchID"]</td>
+								<td>@dr["BranchName"]</td>
+								<td>@dr["BranchCode"]</td>
+								<td>@Convert.ToDateTime(@dr["Created"]).ToString("dd-MM-yyyy")</td>
+								<td>
+									<a asp-area="MST_Branch" asp-controller="MST_Branch" asp-action="MST_BranchEdit" asp-route-BranchID="@dr["BranchID"]" class="btn btn-primary">Edit</a>
+									<a asp-area="MST_Branch" asp-controller="MST_Branch" asp-action="MST_BranchDelete" asp-route-BranchID="@dr["BranchID"]" class="btn btn-danger">Delete</a>
+								</td>
+							</tr>
+						}
+					}
+					else
+					{
+						<tr>
+							<td colspan="5" class="text-center">
+								<p class="col-form-label">No Records Found!</p>
+							</td>
+						</tr>
+					}
+				}
+			</tbody>
+		</table>
+	</body>
+</html>

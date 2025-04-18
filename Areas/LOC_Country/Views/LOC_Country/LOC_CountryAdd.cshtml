@@ -1,0 +1,36 @@
+﻿@using WebApplication4.Areas.LOC_Country.Models;
+@using System.Data;
+@model LOC_CountryModel;
+
+<html>
+<body>
+	<form method="post" asp-area="LOC_Country" asp-controller="LOC_Country" asp-action="LOC_CountryAddFormPage">
+		<table class="table mt-3 border border-dark">
+			<thead>
+				<tr>
+					<th scope="col">Insert Country Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<label>CountryName:</label>
+						<input type="text" id="countryName" name="countryName" required />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>CountryCode:</label>
+						<input type="text" id="countryCode" name="countryCode" required />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input class="btn btn-primary" type="submit" value="submit" />
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿@using WebApplication4.Areas.LOC_City.Models;
+@using System.Data;
+@model LOC_CityModal;
+
+<html>
+	<body>
+	<form method="post" asp-area="LOC_City" asp-controller="LOC_City" asp-action="LOC_CityUpdateFillFormData">
+			<table class="table mt-3 border border-dark">
+				<thead>
+					<tr>
+						<th scope="col">Update City Details</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<label>CityName:</label>
+							<input type="text" value="@ViewBag.CityName" id="cityName" name="cityName" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>CityCode:</label>
+							<input type="text" value="@ViewBag.CityCode" id="cityCode" name="cityCode" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>StateID:</label>
+							<input type="text" value="@ViewBag.StateID" id="stateID" name="stateID" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>CountryID:</label>
+							<input type="text" value="@ViewBag.CountryID" id="countryID" name="countryID" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="hidden" value="@ViewBag.CityID" name="CityID" />
+							<input class="btn btn-primary" type="submit" value="Update" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</body>
+</html>

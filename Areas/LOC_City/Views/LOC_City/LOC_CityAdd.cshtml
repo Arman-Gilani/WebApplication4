@@ -1,0 +1,48 @@
+﻿@using WebApplication4.Areas.LOC_City.Models;
+@using System.Data;
+@model LOC_CityModal;
+
+<html>
+	<body>
+		<form method="post" asp-area="LOC_City" asp-controller="LOC_City" asp-action="LOC_CityAddFormPage">
+			<table class="table mt-3 border border-dark">
+				<thead>
+					<tr>
+						<th scope="col">Insert City Details</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<label>CityName:</label>
+							<input type="text" id="cityName" name="cityName" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>CityCode:</label>
+							<input type="text" id="cityCode" name="cityCode" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>StateID:</label>
+							<input type="text" id="stateID" name="stateID" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>CountryID:</label>
+						<input type="text" id="countryID" name="countryID" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="btn btn-primary" type="submit" value="submit" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</body>
+</html>

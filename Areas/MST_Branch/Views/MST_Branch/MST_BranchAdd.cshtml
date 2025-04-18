@@ -1,0 +1,36 @@
+﻿@using WebApplication4.Areas.MST_Branch.Models;
+@using System.Data;
+@model MST_BranchModel;
+
+<html>
+	<body>
+	<form method="post" asp-area="MST_Branch" asp-controller="MST_Branch" asp-action="MST_BranchAddFormPage">
+			<table class="table mt-3 border border-dark">
+				<thead>
+					<tr>
+						<th scope="col">Insert Branch Details</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<label>BranchName:</label>
+							<input type="text" id="countryName" name="countryName" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>BranchCode:</label>
+							<input type="text" id="countryCode" name="countryCode" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="btn btn-primary" type="submit" value="Submit" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</body>
+</html>
